@@ -5,15 +5,15 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-import Button from '@material-ui/core/Button';
+
 
 class Form extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            marca: '',
+            brand: '',
             year: '',
-            tipo: ''
+            plan: ''
         };
     }
 
@@ -24,7 +24,12 @@ class Form extends Component {
 
     cotizarSeguro = (e) => {
         e.preventDefault();
-        alert(this.state.marca + this.state.year + this.state.tipo);
+        const infoAuto = {
+            brand: this.state.brand,
+            year: this.state.year,
+            plan: this.state.plan,
+        };
+        alert(this.state.brand + this.state.year + this.state.plan);
     };
 
     render() {
@@ -36,10 +41,10 @@ class Form extends Component {
         };
         const array_years = fillRange(start_y, end_y);
 
-        const marca = [
-            {marca: "Americano"},
-            {marca: "Europeo"},
-            {marca: "Asiatico"},
+        const brands = [
+            {brand: "Americano"},
+            {brand: "Europeo"},
+            {brand: "Asiatico"},
         ];
         return (
             <div className="container">
@@ -49,18 +54,18 @@ class Form extends Component {
                             <div className="col-lg-4 col-12 d-flex justify-content-center">
                                 <TextField
                                     id="select-marca"
-                                    name="marca"
+                                    name="brand"
                                     select
                                     label="Select"
                                     helperText="Select your brand"
                                     margin="normal"
-                                    value={this.state.marca}
-                                    onChange={this.handleChange('marca')}
+                                    value={this.state.brand}
+                                    onChange={this.handleChange('brand')}
                                 >
                                     {
-                                        Object.keys(marca).map(key => (
-                                            <MenuItem key={key} value={marca[key].marca}>
-                                                {marca[key].marca}
+                                        Object.keys(brands).map(key => (
+                                            <MenuItem key={key} value={brands[key].brand}>
+                                                {brands[key].brand}
                                             </MenuItem>
                                         ))
                                     }
@@ -91,8 +96,8 @@ class Form extends Component {
                                         aria-label="gender"
                                         name="gender2"
                                         className=""
-                                        value={this.state.tipo}
-                                        onChange={this.handleChange('tipo')}
+                                        value={this.state.plan}
+                                        onChange={this.handleChange('plan')}
                                     >
                                         <FormControlLabel
                                             value="basico"
