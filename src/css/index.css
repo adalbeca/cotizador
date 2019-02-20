@@ -12,3 +12,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.width-expand {
+  width: 100% !important;
+}
+.width-90 {
+  width: 90% !important;
+}
+.width-70 {
+  width: 70% !important;
+}
+.width-50 {
+  width: 50% !important;
+}
+.width-300px {
+  width: 300px !important;
+}
+.height-50 {
+  height: 50px !important;
+}
+.height-80 {
+  height: 80px !important;
+}
+.height-200 {
+  height: 200px !important;
+}
